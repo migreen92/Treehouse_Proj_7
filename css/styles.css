@@ -15,6 +15,11 @@ body{
     "nav"
     "main";
 }
+
+.widget-container-full, .widget-container-half {
+  width: 95vw;
+}
+
 main {
   grid-area: main;
 }
@@ -92,8 +97,20 @@ nav img {
   width: 75px;
 }
 .main-headline {
-  padding: 1 3rem;
-  
+  padding: 15px 15px 0 15px;
+}
+
+.alert {
+  margin: 10px auto;
+  padding: .5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+  width: 95%;
+  border-radius: 10px;
+  color: white;
+  background-color: purple;
 }
 ul  {
   display: flex;
@@ -111,20 +128,19 @@ ul  {
 }
 
 .social-img svg {
-  width: 100px;
+  width: 75px;
 }
 
 .social-img, .social-stats {
 padding: 20px;
 display: flex;
 flex-direction: column;
-justify: center;
 }
 .social-stats p:first-child{
   color: purple;
 }
 .social-stats p:last-child{
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 .members, .activity {
@@ -133,14 +149,10 @@ justify: center;
   flex-direction: column;
   justify-content: center;
 }
-.members h4, .activity h4 {
-  padding-left: 3rem;
-}
+
 .members-container, .activity-container {
-  /* width: 100%; */
   padding: 20px;
   margin: auto;
-  /* border-bottom: 1px solid gray; */
   text-align: center;
 }
 
@@ -186,21 +198,39 @@ button {
  }
 @media screen and (min-width:768px) {
   body {
-    grid-template-columns: 75px 1fr;
+    grid-template-columns: 60px 1fr;
     grid-template-areas:
     'header header'
     'nav main';
   }
+  .main-headline, #alert, .main-headline,  .main-dashboard, .alert, .traffic, .stats, .activity, .members, .contact, .settings {
+    grid-column: 1 / span 2;
+  }
+
+  .daily {
+    grid-column: 1 / span 1;
+  }
+
+  .mobile {
+    grid-column, 2 / span 1;
+  }
+
+  .widget-container-full {
+    width: 90%;
+  }
+  .widget-container-half {
+    width: 45%;
+  }
 
   main {
     display: grid;
-    grid-template-columns: 50%;
+    grid-template-columns:1fr 1fr;
   }
   section {
-  border-top: 1px solid lightgray;
-  border-left: 1px solid lightgray;
-  border-right: 1px solid lightgray;
-  border-bottom: none;
+    border-top: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    border-bottom: none;
   }
 
   nav {
@@ -210,22 +240,74 @@ button {
     align-items: center;
   }
   nav svg {
-    width: 75px;
+    width: 60px;
     padding: 10px;
   }
-
-  .main-dashboard, .alert, .traffic, .social-container, .members, .contact, .settings {
-    grid-column: 1 / span 2;
+  .traffic-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  ul li {
+    padding: 15px;
+    margin: 5px;
+  }
+  .active {
+    border-radius: 50px;
+    background-color: forestgreen;
+    color: white;
   }
 
-  .daily, .members {
-    grid-column: 1 / span 1;
+  .social-container {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    }
+
+  .social {
+    width: 25vw;
+    padding: 10px;
+    flex-direction: row;
+    margin: 5px;
+  }
+  .social-stats {
+    padding: 10px 0;
+  }
+  .social-stats p:last-child{
+    font-size: 2rem;
+  }
+  .members, .activity{
+    padding: 25px;
+  }
+  .members-container, .activity-container {
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px;
   }
 
-  .mobile, .activity {
-    grid-column, 2 / span 1;
+  .members-text, .activity-text {
+    padding: 0 15px;
+  }
+  .members-text > *, .activity-text > * {
+    text-align: left;
+  }
+
+  .members-container p {
+    margin-left: auto;
   }
   select {
     width: 100%;
   }
+}
+@media screen and (min-width:1024px) {
+
+  .members, .contact {
+    grid-column: 1 / span 1;
+  }
+
+   .activity, .settings {
+    grid-column: 2 / span 1;
+  }
+
 }

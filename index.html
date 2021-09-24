@@ -46,14 +46,14 @@
         <h2 class="headline" id="dashboard">Dashboard</h2>
       </div>
       <!-- ALERT BANNER -->
-      <div class="alert" id="alert">
+      <div id="alert">
         <!-- TO BE INSERTED VIA JS -->
       </div>
       <section class="traffic">
         <div class="traffic-header">
           <h4>Traffic</h4>
           <ul class="traffic-nav">
-            <li>Hourly</li>
+            <li class="active">Hourly</li>
             <li>Daily</li>
             <li>Weekly</li>
             <li>Monthly</li>
@@ -61,6 +61,7 @@
         </div>
         <div class="widget-container-full">
           <canvas id="traffic-chart"></canvas>
+        </div>
       </section>
       <section class="daily">
         <h4>Daily Traffic</h4>
@@ -74,8 +75,9 @@
           <canvas id="mobile-chart"></canvas>
         </div>
       </section>
-      <section class="social-container">
+      <section class="stats">
         <h4>Social Stats</h4>
+        <div class="social-container">
         <div class="social" id="facebook">
           <div class="social-img">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -109,6 +111,7 @@
             <p>16,669</p>
           </div>
         </div>
+        </div>
       </section>
       <section class="members" id="members">
         <h4>New Members</h4>
@@ -128,6 +131,7 @@
             </div>
             <p>7/16/2020</p>
           </div>
+          </div>
           <div class="members-container">
             <img src="images/member-3.jpg" alt="Karen Won">
             <div class="members-text">
@@ -136,6 +140,7 @@
             </div>
             <p>1/06/2012</p>
           </div>
+          </div>
           <div class="members-container">
             <img src="images/member-4.jpg" alt="Jacob Grimm">
             <div class="members-text">
@@ -143,6 +148,7 @@
               <a href="#">brothersgrimm@fairytale.de</a>
             </div>
             <p>5/18/1849</p>
+          </div>
           </div>
       </section>
       <section class="activity" id="activity">
@@ -203,5 +209,6 @@
         </div>
       </section>
     </main>
+    <script type="text/javascript" src="app.js"></script>
   </body>
 </html>
