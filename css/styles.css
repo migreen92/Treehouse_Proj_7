@@ -54,7 +54,6 @@ a {
 }
 
 .header-nav {
-  border-left: 1px solid purple;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -74,14 +73,14 @@ a {
   justify-content: space-between;
   align-items: center;
 }
-.header-nav img {
-  width: 75px;
-}
 
 .header-nav svg {
   width: 50px;
 }
 
+.header  #bell{
+  border-right: 2px solid purple;
+}
 nav {
   grid-area: nav;
   padding: 25px;
@@ -95,6 +94,7 @@ nav a {
 }
 nav img {
   width: 75px;
+  border-left: 2px solid gray;
 }
 .main-headline {
   padding: 15px 15px 0 15px;
@@ -196,9 +196,11 @@ button {
  .button-disabled {
    background-color: lightgray;
  }
+
 @media screen and (min-width:768px) {
   body {
-    grid-template-columns: 60px 1fr;
+    grid-template-columns: 5vw auto auto;
+    grid-template-rows: auto;
     grid-template-areas:
     'header header'
     'nav main';
@@ -212,19 +214,21 @@ button {
   }
 
   .mobile {
-    grid-column, 2 / span 1;
+    grid-column: 2 / span 1;
   }
 
   .widget-container-full {
-    width: 90%;
+    width: 90vw;
+    /* position: relative; */
   }
   .widget-container-half {
-    width: 45%;
+    width: 45vw;
+    /* position: relative; */
   }
 
   main {
     display: grid;
-    grid-template-columns:1fr 1fr;
+    grid-auto-columns: 45vw 45vw;
   }
   section {
     border-top: 1px solid lightgray;
@@ -288,6 +292,7 @@ button {
 
   .members-text, .activity-text {
     padding: 0 15px;
+    flex-shrink: 0;
   }
   .members-text > *, .activity-text > * {
     text-align: left;
