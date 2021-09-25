@@ -40,7 +40,7 @@ var hourlyChart = new Chart(hourlyCtx, {
     }]
   },
   options: {
-    aspectRatio: 2.5,
+    aspectRatio: 1.5,
     animation: {
         duration: 0
     },
@@ -78,7 +78,7 @@ var hourlyChart = new Chart(dailyBarCtx, {
     }]
   },
   options: {
-    responsive: true,
+    aspectRatio: 1.5,
     animation: {
         duration: 0
     },
@@ -121,11 +121,17 @@ var myChart = new Chart(mobileCtx, {
     ]
   },
   options: {
-      responsive: true,
-      aspectRatio: 2.5,
+      // responsive: true,
+      aspectRatio: 3,
       animation: {
           duration: 0
       },
+    },
+    legend: {
+      position: 'right',
+      labels: {
+        fontColor: 'purple',
+      }
     }
 });
 
