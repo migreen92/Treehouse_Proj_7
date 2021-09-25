@@ -61,7 +61,7 @@ a {
 }
 
 .header-nav > * {
-  padding: 0 20px;
+  margin: 0 25px;
 }
 
 .header {
@@ -78,9 +78,14 @@ a {
   width: 50px;
 }
 
-.header  #bell{
+.header-nav  #bell {
+  padding-right: 30px;
   border-right: 2px solid purple;
 }
+.header-nav img {
+  width: 75px;
+}
+
 nav {
   grid-area: nav;
   padding: 25px;
@@ -184,6 +189,20 @@ button {
   background-color: purple;
 }
 
+.switch-light {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 2.5rem 0;
+}
+#toggle {
+  margin-left: auto;
+  width: 100px;
+}
+
+#timezone {
+  margin-top: 25px;
+}
 .settings-button {
   display: flex;
   flex-direction: row;
@@ -238,6 +257,7 @@ button {
   }
 
   nav {
+    width: 60px;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -314,5 +334,4 @@ button {
    .activity, .settings {
     grid-column: 2 / span 1;
   }
-
 }

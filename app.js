@@ -109,7 +109,7 @@ var myChart = new Chart(mobileCtx, {
     labels: devices,
     datasets: [
       {
-        label: "Mobile Users",
+        label: "% of Mobile Users",
         data: devicePercent,
         backgroundColor: [
           "purple",
@@ -127,4 +127,22 @@ var myChart = new Chart(mobileCtx, {
           duration: 0
       },
     }
+});
+
+// -------- MOBILE USERS CHART -------- //
+
+const user = document.getElementById('user_name');
+const message = document.getElementById('message');
+const send = document.getElementById('send');
+
+send.addEventListener('click', () => {
+  if (user.value === "" && message.value === "") {
+    alert("Don't forget to fill out the user and message fields!");
+  } else if (user.value === '') {
+    alert("You forgot about the user field!");
+  } else if (message.value === '') {
+    alert("You forgot about the message!");
+  } else {
+    alert("The owls are on their way with your message!");
+  }
 });
