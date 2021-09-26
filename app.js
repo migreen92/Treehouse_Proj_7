@@ -17,6 +17,14 @@ alertBanner.addEventListener('click', e => {
   }
 });
 
+const headerAlert = document.getElementById('notifications');
+
+headerAlert.addEventListener('click', e => {
+  const element = e.target;
+  alertBanner.style.display = 'block'
+});
+
+
 
 // -------- WEEKLY DATA CHART -------- //
 
@@ -33,7 +41,7 @@ var hourlyChart = new Chart(hourlyCtx, {
     datasets: [{
       label: 'Users',
       data: hourlyUsers,
-      backgroundColor: "rgba(255, 99, 132, 0.2)",
+      backgroundColor: "rgba(135, 206, 235, 0.2)",
       borderWidth:3,
       fill: true,
       lineTension: .2
@@ -71,7 +79,7 @@ var hourlyChart = new Chart(dailyBarCtx, {
     datasets: [{
       label: 'days',
       data: dailyUsers,
-      backgroundColor: "rgba(255, 99, 132)",
+      backgroundColor: "rgba(135, 206, 235)",
       borderWidth:3,
       fill: true,
       lineTension: .2
@@ -100,39 +108,40 @@ var hourlyChart = new Chart(dailyBarCtx, {
 
 var mobileCtx = document.getElementById('mobile-chart');
 
-var devicePercent = [27, 19, 54];
-var devices = ["Desktop", "Tablet", "Mobile"];
-
-var myChart = new Chart(mobileCtx, {
-  type: "doughnut",
-  data: {
-    labels: devices,
-    datasets: [
-      {
-        label: "% of Mobile Users",
-        data: devicePercent,
-        backgroundColor: [
-          "purple",
-          "blue",
-          "green"
-        ],
-        borderWidth: 1
-      }
+const mobileData = {
+  labels: ["Desktop", "Tablet", "Mobile"],
+  datasets: [{
+    label: "% of Mobile Users",
+    data: [27, 19, 54],
+    borderWidth: 0,
+    backgroundColor: [
+      "purple",
+      "blue",
+      "green"
     ]
-  },
-  options: {
-      // responsive: true,
-      aspectRatio: 3,
-      animation: {
-          duration: 0
-      },
-    },
+  }]
+};
+const mobileOptions = {
+  responsive: true,
+        aspectRatio: 1.5,
+        animation: {
+            duration: 0
+        },
+  plugins: {
     legend: {
       position: 'right',
       labels: {
-        fontColor: 'purple',
+        boxWidth: 20,
+        fontStyle: 'bold'
       }
     }
+  }
+};
+
+let mobileChart = new Chart(mobileCtx, {
+  type: 'doughnut',
+  data: mobileData,
+  options: mobileOptions
 });
 
 // -------- MOBILE USERS CHART -------- //

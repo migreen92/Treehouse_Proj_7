@@ -81,15 +81,43 @@ img{
   max-width: 50px;
 }
 
-.header  #bell {
-  padding-right: 15px;
-  border-right: 2px solid purple;
-}
-
 header svg, nav svg {
   fill: white;
 }
+#notifications {
+  display:flex;
+  flex-direction: row;
+  padding-right: 50px;
+  border-right: 2px solid purple;
+}
 
+#notifications svg:hover{
+  animation: swing 1s ease-in-out;
+}
+@keyframes swing {
+  0% { transform: rotate(0deg);}
+  20% { transform: rotate(15deg); }
+  40% { transform: rotate(-15deg); }
+  60% { transform: rotate(5deg); }
+  80% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.swing {
+  transform-origin: top center;
+  animation-name: swing;
+}
+
+#header-alert {
+  width: 15px;
+}
+
+.st0{
+  fill:none;
+  stroke:purple;
+  stroke-width:5;
+  ;stroke-miterlimit:10;
+}
 /* ------ NAVIGATION BAR ------ */
 nav {
   grid-area: nav;
@@ -211,8 +239,8 @@ ul li {
 
 .members-container:last-child,
 .activity-container:last-child {
-  padding-bottom: none;
-  border-bottom: none;
+  padding-bottom: 0px;
+  border-bottom: 0px;
 }
 
 /* ------ CONTACT ------ */
@@ -294,10 +322,6 @@ button {
 
    .header > * {
      margin: 0 25px;
-   }
-   .header  #bell {
-     padding-right: 50px;
-     border-right: 2px solid purple;
    }
 
    main {
@@ -381,8 +405,8 @@ button {
 
    .members-text, .activity-text {
      padding: 0 15px;
-     flex-shrink: 0;
    }
+   
    .members-text > *, .activity-text > * {
      text-align: left;
    }
@@ -399,15 +423,15 @@ button {
    }
 }
 @media screen and (min-width:1024px) {
- .members, .contact {
-   grid-column: 1 / span 1;
- }
+  .members, .contact {
+    grid-column: 1 / span 1;
+  }
 
   .activity, .settings {
-   grid-column: 2 / span 1;
- }
+    grid-column: 2 / span 1;
+  }
 
- nav svg {
+  nav svg {
     max-width: 100px;
-}
+  }
 }
