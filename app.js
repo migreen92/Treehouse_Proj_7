@@ -2,6 +2,7 @@
 
 // -------- ALERT BANNER -------- //
 const alertBanner = document.getElementById('alert');
+const headerAlert = document.getElementById('header-alert');
 
 alertBanner.innerHTML =
   `
@@ -9,32 +10,33 @@ alertBanner.innerHTML =
       <p>ALERT: You have <strong>3</strong> new notifications.</p>
       <p class="alert-close">x</p>
     </div>
-  `
+  `;
 alertBanner.addEventListener('click', e => {
   const element = e.target;
   if (element.classList.contains('alert-close')) {
-    alertBanner.style.display = 'none'
+    alertBanner.style.display = 'none';
+    headerAlert.style.display = 'inline';
   }
 });
 
-const headerAlert = document.getElementById('notifications');
-
-headerAlert.addEventListener('click', e => {
+const bell = document.getElementById('notifications');
+bell.addEventListener('click', e => {
   const element = e.target;
-  alertBanner.style.display = 'block'
+  alertBanner.style.display = 'block';
+  headerAlert.style.display = 'none';
 });
 
 
 
-// -------- WEEKLY DATA CHART -------- //
+// -------- HOURLY DATA CHART -------- //
 
 let hourlyCtx = document.getElementById('traffic-chart');
 
 const hours = ["8am-9am", "9am-10am", "11am-12pm", "12pm-1pm", "1pm-2pm", "2pm-3pm", "4pm-5pm",
   "5pm-6pm", "6pm-7pm", "7pm-8pm", "8pm-9pm", "9pm-10pm"];
-const hourlyUsers = [781, 423, 652, 842, 762, 415, 625, 1075, 874, 745, 847, 912]
+const hourlyUsers = [781, 423, 652, 842, 762, 415, 625, 1075, 874, 745, 847, 912];
 
-var hourlyChart = new Chart(hourlyCtx, {
+const hourlyChart = new Chart(hourlyCtx, {
   type: 'line',
   data: {
     labels: hours,
@@ -48,7 +50,7 @@ var hourlyChart = new Chart(hourlyCtx, {
     }]
   },
   options: {
-    aspectRatio: 1.5,
+    aspectRatio: 2.5,
     animation: {
         duration: 0
     },
@@ -70,9 +72,9 @@ var hourlyChart = new Chart(hourlyCtx, {
 var dailyBarCtx = document.getElementById('daily-bar-chart');
 
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-const dailyUsers = [8056, 3258, 4586, 6781, 4236, 7319, 9912]
+const dailyUsers = [8056, 3258, 4586, 6781, 4236, 7319, 9912];
 
-var hourlyChart = new Chart(dailyBarCtx, {
+const dailyChart = new Chart(dailyBarCtx, {
   type: 'bar',
   data: {
     labels: days,
@@ -138,7 +140,7 @@ const mobileOptions = {
   }
 };
 
-let mobileChart = new Chart(mobileCtx, {
+const mobileChart = new Chart(mobileCtx, {
   type: 'doughnut',
   data: mobileData,
   options: mobileOptions
